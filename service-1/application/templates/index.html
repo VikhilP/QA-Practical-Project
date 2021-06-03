@@ -1,0 +1,24 @@
+<html>
+<head>NFL DRAFT 20XX</head>
+<title>NFL Draft 20XX</title>
+<body>
+{% block body_content%}
+
+<div class='form'>
+    {{ form.hidden_tag() }}
+    <h2>You are a NFL General Manager, you are in charge of 
+        your teams next pick in the NFL Draft. 
+    </h2>
+    <form method = 'POST' action="">
+        {{form.submit}}
+    </form>
+
+
+</div>
+
+
+{%endblock%}
+</body>
+
+
+</html>
