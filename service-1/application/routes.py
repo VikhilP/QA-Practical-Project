@@ -24,3 +24,6 @@ def home():
         db.session.add(new_rookie)
         db.session.commit()
         
+        last_picks = draft.query.order_by(desc(draft.id)).limit(5).all()
+
+        return render_template('index.html', title='Draft', form = form, info=info, last_picks = last_picks)
