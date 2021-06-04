@@ -12,12 +12,22 @@
     <form method = 'POST' action="">
         {{form.submit}}
     </form>
-
-
 </div>
+{% if info %}
+You had selected a:
+{{info.get["position"]}} in 
+Round {{info.get["draft_round"]}}, 
+Pick {{info.get["round_pick"]}} 
+({{info.get["draft_number"]}} Overall)
 
+{% for picks in last_picks %}
+<th>{{picks.position}}</th>
+<th>{{picks.pick}}</th>
+{% endfor %}
 
-{%endblock%}
+{% endif %}
+
+{% endblock %}
 </body>
 
 
