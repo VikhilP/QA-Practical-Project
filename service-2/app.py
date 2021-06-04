@@ -11,3 +11,6 @@ positions = ["QB","HB","FB","WR","T","G","C","TE",
 def pos():
     return random.choice(positions)
 
+if __name__=="__main__":
+    app.run(port=5001, host='0.0.0.0', debug=True)  
+
