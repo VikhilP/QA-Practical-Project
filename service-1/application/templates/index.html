@@ -5,20 +5,21 @@
 {% block body_content%}
 
 <div class='form'>
-    {{ form.hidden_tag() }}
+    
     <h2>You are a NFL General Manager, you are in charge of 
         your teams next pick in the NFL Draft. 
     </h2>
     <form method = 'POST' action="">
+        {{ form.hidden_tag() }}
         {{form.submit}}
     </form>
 </div>
 {% if info %}
 You had selected a:
-{{info.get["position"]}} in 
-Round {{info.get["draft_round"]}}, 
-Pick {{info.get["round_pick"]}} 
-({{info.get["draft_number"]}} Overall)
+{{info["position"]}} in 
+Round {{info["draft_round"]}}, 
+Pick {{info["round_pick"]}} 
+({{info["draft_number"]}} Overall)
 
 {% for picks in last_picks %}
 <th>{{picks.position}}</th>
