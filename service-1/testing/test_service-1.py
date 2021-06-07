@@ -1,4 +1,6 @@
 from flask_testing import TestCase
+from flask import url_for
+import requests
 import requests_mock
 from application import app
 
@@ -9,7 +11,16 @@ class TestBase(TestCase):
 class TestResponse(TestBase):
     def test_index(self):
         with requests_mock.mock() as m:
-            m.get('http://backend:5000/get/text', text='Some text, idk.')
+            m.get('http://service-2:5000/getpositions', text='QB')
+            m.get('http://service-3:5000/getpickorder', json=35)
+            m.post('http://service-4:5000/calculatedraftround', json={'draft_number': 35, 'draft_round': 2, 'position': 'QB', 'round_pick': 3})
             
-            response = self.client.get('/')
-            self.assertIn(b'Some text, idk.', response.data)
+
+            response = self.client.get(url_for("home"))
+            a = "You had selected a: QB"
+            
+            
+
+
+            self.assertIn(a, response.data.decode())
+
