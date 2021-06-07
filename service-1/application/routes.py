@@ -8,8 +8,7 @@ import random, requests
 @app.route('/home', methods = ['GET', 'POST'])
 def home():
     form = GenerateDraft()
-    print(form.validate_on_submit())
-    print(form.errors)
+
     if form.validate_on_submit():
         draft_number = requests.get('http://service_3:5002/getpickorder').json()
         position = requests.get('http://service_2:5001/getpositions').text
@@ -25,7 +24,6 @@ def home():
         db.session.commit()
         
         last_picks = draft.query.order_by(desc(draft.id)).limit(5).all()
-        print(info)
-        print(last_picks)
+        
         return render_template('index.html', title='Draft', form = form, info=info, last_picks = last_picks)
     return render_template('index.html', title='Draft', form = form)
