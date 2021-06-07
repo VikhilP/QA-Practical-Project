@@ -11,3 +11,4 @@ pymysql
 wtforms
 selenium
 requests
+requests_mock
