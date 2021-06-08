@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Create DB'){
             steps{
-                sh "sudo docker exec qa-practical-project_service_1_1 create.py"
+                sh "sudo docker exec draft_service_1_1 create.py"
             }
         }
     }
