@@ -1,6 +1,7 @@
 #!/bin/bash
 python3-venv venv
 source venv/bin/activate
+python3 --version
 
 pip3 install pytest pytest-cov
 
