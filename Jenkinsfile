@@ -6,26 +6,25 @@ pipeline {
                 sh "bash setupscripts.sh"
             }
         }
+        stage('Test') {
+            steps {
+                sh "bash testingscripts.sh"
+            }
+        }
 
         stage('Build') {
             steps {
                 sh "sudo docker-compose build --parallel"
             }
         }
-
-        stage('Test') {
+        stage('Deploy') {
             steps {
-                sh "bash testingscripts.sh"
+                sh "sudo docker-compose up -d"
             }
         }
         stage('Create DB'){
             steps{
                 sh "sudo docker exec qa-practical-project_service_1_1 create.py"
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh "sudo docker-compose up -d"
             }
         }
     }
