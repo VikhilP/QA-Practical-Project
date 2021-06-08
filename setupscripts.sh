@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt install python3-venv
 python3-venv venv
 source venv/bin/activate
 python3 --version
