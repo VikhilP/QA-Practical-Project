@@ -1,6 +1,6 @@
 <html>
 <head>NFL DRAFT 20XX</head>
-<title>NFL Draft 20XX</title>
+<title>{{title}}</title>
 <body>
 {% block body_content%}
 
@@ -11,7 +11,7 @@
     </h2>
     <form method = 'POST' action="">
         {{ form.hidden_tag() }}
-        <div class "submitform">
+        <div class = "submitform">
             {{form.submit}}
         </div>
     </form>

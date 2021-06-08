@@ -10,6 +10,7 @@ def home():
     form = GenerateDraft()
 
     if form.validate_on_submit():
+    #if request.method == "POST":
         draft_number = requests.get('http://service_3:5002/getpickorder').json()
         position = requests.get('http://service_2:5001/getpositions').text
 
@@ -25,5 +26,5 @@ def home():
         
         last_picks = draft.query.order_by(desc(draft.id)).limit(5).all()
         
-        return render_template('index.html', title='Draft', form = form, info=info, last_picks = last_picks)
+        return render_template('index.html', title='SHOW UP PLEASE', form = form, info=info, last_picks = last_picks)
     return render_template('index.html', title='Draft', form = form)
