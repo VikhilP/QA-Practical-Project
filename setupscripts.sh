@@ -2,7 +2,7 @@
 python3-venv venv
 source venv/bin/activate
 
-pip3 install pytest
+pip3 install pytest pytest-cov
 
 # Docker
 sudo apt-get update
