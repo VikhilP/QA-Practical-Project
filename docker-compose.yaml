@@ -5,6 +5,8 @@ services:
         build: ./service-1
         ports:
             - '5000:5000'
+        environment:
+            DATABASE_URI: ${DATABASE_URI}
     service_2:
         image: vikhilp98/s2
         build: ./service-2
