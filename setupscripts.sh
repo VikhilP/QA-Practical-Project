@@ -2,6 +2,8 @@
 python3-venv venv
 source venv/bin/activate
 
+sudo apt install python3-pytest
+
 # Docker
 sudo apt-get update
 sudo apt install curl -y
