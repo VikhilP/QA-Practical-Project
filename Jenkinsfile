@@ -9,7 +9,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh "docker-compose build --parallel"
+                sh "sudo docker-compose build --parallel"
             }
         }
 
@@ -20,12 +20,12 @@ pipeline {
         }
         stage('Create DB'){
             steps{
-                sh "docker exec qa-practical-project_service_1_1 create.py"
+                sh "sudo docker exec qa-practical-project_service_1_1 create.py"
             }
         }
         stage('Deploy') {
             steps {
-                sh "docker-compose up -d"
+                sh "sudo docker-compose up -d"
             }
         }
     }
