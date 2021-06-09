@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Ansible') {
             steps {
-                sh "cd ansible && ~/.local/bin/ansible-playbook -i inventory.yaml playbook.yaml"
+                sh "cd ansible && ansible-playbook -i inventory.yaml playbook.yaml"
             }
         }
         stage('Deploy') {
