@@ -25,7 +25,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 sudo apt install software-properties-common
 sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt install ansible
+sudo apt install ansible -y
 # mkdir -p ~/.local/bin
 # echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
 # source ~/.bashrc
