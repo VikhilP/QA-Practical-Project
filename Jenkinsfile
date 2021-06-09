@@ -17,6 +17,11 @@ pipeline {
                 sh "sudo docker-compose build --parallel"
             }
         }
+        stage('Ansible') {
+            steps {
+                sh "cd ansible && ansible-playbook -i inventory.yaml playbook.yaml"
+            }
+        }
         stage('Deploy') {
             steps {
                 sh "sudo docker-compose up -d"
