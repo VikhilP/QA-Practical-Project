@@ -1,9 +1,16 @@
 pipeline {
     agent any
+    environment{
+        install = "false"
+    }
     stages {
         stage('Setup'){
             steps{
-                sh "bash setupscripts.sh"
+                script{
+                    if (env.install == "true"){
+                        sh "bash setupscripts.sh"
+                    }
+                }
             }
         }
         stage('Test') {
