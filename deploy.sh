@@ -1,0 +1,1 @@
+ssh -i ~/.ssh/ansible_id_rsa jenkins@manager "docker stack deploy --compose-file docker-compose.yaml "
