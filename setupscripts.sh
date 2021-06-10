@@ -12,6 +12,8 @@ sudo apt-get update
 sudo apt install curl -y
 curl https://get.docker.com | sudo bash
 
+docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+
 
 # Docker-compose
 sudo apt update
@@ -35,5 +37,7 @@ sudo apt install ansible -y
 
 type ansible
 type ansible-playbook
+
+
 
 pip3 install -r requirements.txt
