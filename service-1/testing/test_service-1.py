@@ -20,9 +20,9 @@ class TestResponse(TestBase):
             form = GenerateDraft
             b = self.client.get(url_for("home"))
             self.assert200(b)
-            m.get('http://service_2:5001/getpositions', text='QB')
+            m.get('http://service_2:5001/getpositions', text='SS')
             m.get('http://service_3:5002/getpickorder', json=35)
-            m.post('http://service_4:5003/round', json={'position': 'QB','draft_number': 35, 'draft_round': 2, 'round_pick': 3})
+            m.post('http://service_4:5003/round', json={'position': 'SS','draft_number': 35, 'draft_round': 2, 'round_pick': 5})
 
             response = self.client.post(url_for("home"))
 
