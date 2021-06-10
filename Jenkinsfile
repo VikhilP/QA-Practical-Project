@@ -39,7 +39,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "cd /home/jenkins/.jenkins/workspace/draft && deploy.sh"
+                sh "bash deploy.sh"
             }
         }
         
