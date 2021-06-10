@@ -12,7 +12,7 @@ sudo apt-get update
 sudo apt install curl -y
 curl https://get.docker.com | sudo bash
 
-docker logout
+
 docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
 
 
