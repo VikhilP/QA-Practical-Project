@@ -39,7 +39,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "cd draft && deploy.sh"
+                sh "deploy.sh"
             }
         }
         
