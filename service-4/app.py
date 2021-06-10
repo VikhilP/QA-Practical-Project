@@ -34,5 +34,4 @@ def calculatedraftround():
     info = {"position": position, "draft_number": draft_number, "draft_round": draft_round, "round_pick": round_pick } 
     return jsonify(info)
 
-if __name__=="__main__":
-    app.run(port=5003, host='0.0.0.0', debug=True)  
+if __name__=="__main__": app.run(port=5003, host='0.0.0.0', debug=True)  
