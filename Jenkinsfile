@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Push') {
             steps {
-                sh "sudo docker push"
+                sh "sudo docker-compose push"
             }
         }
         stage('Ansible') {
