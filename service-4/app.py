@@ -9,7 +9,7 @@ def calculatedraftround():
     position = request.json["pos"]
 
     # calculations done here so i dont have to do it on the front end
-    for i in range (8):
+    for i in range (41):
         if draft_number/30 <=i:
             draft_round = i
             break
