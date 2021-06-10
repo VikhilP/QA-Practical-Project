@@ -30,5 +30,5 @@ class TestResponse(TestBase):
             
 
         self.assert200(response)
-        self.assertIn("QB", response.data.decode())
+        self.assertIn("SS", response.data.decode())
 
