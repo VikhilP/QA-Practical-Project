@@ -13,7 +13,7 @@
 - name: Add nginx conf
   copy:
     src: nginx.conf
-    dest: /etc/nginx/nginx.conf
+    dest: ansible/roles/nginx/files/nginx.conf
 - name: Restart nginx
   service: 
     name: nginx
