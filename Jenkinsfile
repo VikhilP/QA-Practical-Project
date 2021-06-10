@@ -3,7 +3,8 @@ pipeline {
     environment{
         DOCKER_USERNAME = credentials('DOCKER_USERNAME')
         DOCKER_PASSWORD = credentials('DOCKER_PASSWORD')
-        install = "true"
+        install = "false"
+        DATABASE_URI = credentials("DATABASE_URI")
     }
     stages {
         stage('Setup'){
@@ -38,13 +39,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "sudo docker-compose up -d"
+                sh "cd draft && deploy.sh"
             }
         }
-        stage('Create DB'){
-            steps{
-                sh "sudo docker exec draft_service_1_1 python3 create.py"
-            }
-        }
+        
     }
 }

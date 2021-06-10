@@ -1,4 +1,5 @@
 #!/bin/bash
+python3 service-1/create.py
 source venv/bin/activate
 #pip3 install -r requirements.txt
 python3 -m pytest service-1/testing/test_service-1.py --cov=application
