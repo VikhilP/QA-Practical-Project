@@ -26,5 +26,5 @@ def home():
         
         last_picks = draft.query.order_by(desc(draft.id)).limit(5).all()
         
-        return render_template('index.html', title='SHOW UP PLEASE', form = form, info=info, last_picks = last_picks)
+        return render_template('index.html', title='Draft', form = form, info=info, last_picks = last_picks)
     return render_template('index.html', title='Draft', form = form)
