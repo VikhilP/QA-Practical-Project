@@ -51,6 +51,38 @@ This revision is shown at the end of the table "Response(end)" signalling my pro
 Using the risk matrix and colours, i have identified how big each risk is. Red signals that 
 fixing this issue is of high priority
 
+## Test Plans
+
+These were designed to show that the functionality of the app is at 100%. These tests have been reflected in the unit tests that i have created
+
+# Continuous Deployemnt and Integration
+
+Jenkins was used as an automated process of the Contiuous Deployment and Integration devops mindset.
+
+Below is the completed Jenkins pipeline for the project. 
+
+There are 6 Stages:
+1. Setup: This is where all the setup downloads will be implemented into the virtual environment (also set here)
+2. Testing: Performs the unit tests for the project
+3. Build: This builds the services into seperate images onto the local jenkins machine
+4. Push: this uploads the images from the previous stage onto my personal dockerhub account storing the images
+5. Ansible: This runs my ansible commands. This means that jenkins will set up the roles for each node connected to it, allowing for sepertion of code from other node e.g. nginx roles do not perform the same actions as manager/worker node. This process create the basis of the docker swarm
+6. Deploy: Using a deploy script, jenkins is able to ssh into the manager node, copy over the ansible playbook (due to set up form the previous build) and allows the swarm to be fully created and made availble to the public. Using a stack also paired with nginx means that there is no downtime for the user from when the devs push the code to git hub to when the stack is deployed.
+
+A diagram below describes the full process of the CI pipeline
+
+
+# Components in Detail
+
+## Docker
+
+Docker allows for programs to be run in a isolated container. it does this by building the app and putting it into an image. This is sort of like a executable which entails everything that the app needs to run such as the code, dependencies, libraries, directories needed, ports etc. These are defined inside docker files
+## Ansible
+
+## Nginx
+
+
+
 
 
 
