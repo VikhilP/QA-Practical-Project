@@ -22,7 +22,7 @@ class TestResponse(TestBase):
             self.assert200(b)
             m.get('http://service_2:5001/getpositions', text='SS')
             m.get('http://service_3:5002/getpickorder', json=35)
-            m.post('http://service_4:5003/round', json={'position': 'SS','draft_number': 35, 'draft_round': 2, 'round_pick': 5})
+            m.post('http://service_4:5003/round', json={'position': 'SS','draft_number': 35, 'draft_round': 2, 'round_pick': 3})
 
             response = self.client.post(url_for("home"))
 
@@ -30,5 +30,5 @@ class TestResponse(TestBase):
             
 
         self.assert200(response)
-        self.assertIn("QB", response.data.decode())
+        self.assertIn("SS", response.data.decode())
 

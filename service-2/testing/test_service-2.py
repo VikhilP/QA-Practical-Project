@@ -12,5 +12,6 @@ class TestResponse(TestBase):
         
         response = self.client.get(url_for("pos"))
 
-        positions = ["SS","1B","2B","3B","LF","RF","CF","DH","C"]
+        positions = ["QB","HB","FB","WR","T","G","C","TE",
+    "CB","LB","DT","DE","SS","FS","K","KR","P"]
         self.assertIn(response.data.decode(), positions)

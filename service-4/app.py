@@ -9,15 +9,15 @@ def calculatedraftround():
     position = request.json["pos"]
 
     # calculations done here so i dont have to do it on the front end
-    for i in range (41):
-        if draft_number/30 <=i:
+    for i in range (8):
+        if draft_number/32 <=i:
             draft_round = i
             break
 
-    round_pick = draft_number%30
+    round_pick = draft_number%32
 
     if round_pick == 0:
-        round_pick = 30
+        round_pick = 32
 
     info = {"position": position, "draft_number": draft_number, "draft_round": draft_round, "round_pick": round_pick } 
     return jsonify(info)
