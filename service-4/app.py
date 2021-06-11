@@ -13,18 +13,6 @@ def calculatedraftround():
         if draft_number/32 <=i:
             draft_round = i
             break
-        # elif draft_number/32 <=2:
-        #     draft_round = 2
-        # elif draft_number/32 <=3:
-        #     draft_round = 3
-        # elif draft_number/32 <=4:
-        #     draft_round = 4
-        # elif draft_number/32 <=5:
-        #     draft_round = 5
-        # elif draft_number/32 <=6:
-        #     draft_round = 6
-        # elif draft_number/32 <=7:
-        #     draft_round = 7
 
     round_pick = draft_number%32
 
