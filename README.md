@@ -76,7 +76,17 @@ A diagram below describes the full process of the CI pipeline
 
 ## Docker
 
-Docker allows for programs to be run in a isolated container. it does this by building the app and putting it into an image. This is sort of like a executable which entails everything that the app needs to run such as the code, dependencies, libraries, directories needed, ports etc. These are defined inside docker files
+Docker allows for programs to be run in a isolated container. it does this by building the app and putting it into an image. This is sort of like a executable which entails everything that the app needs to run such as the code, dependencies, libraries, directories needed, ports etc. These are defined inside Dockerfile(s)
+
+### Docker Compose
+
+Docker compose is a tool that needs to be installed alongside docker. This tool practically automates the docker build process. Previously, a devops engineer would have to enter in each docker build process into the command line. Docker-Compose allows devops engineers to input all of these into one file. The text is easier to read and debug as most statements are one word commands. Services created and defined inside this file will be in the same network allowing for each service to talk to one another.
+
+### Docker Swarm
+
+A docker swarm is an orchestration tool that allows for applications to be more robust and protected from overloading. Swarms are clusters of machines/VMs that are running shared containers (in most cases), and thus benefit from increased scalabitly and error handing as more machines leads to less points of failure. Docker swarm uses the same docker-compose file used to build the images but with one slight difference. Docker swarm cannot build images which is why it is used in the deployment stage. Swarm needs to pull the images from elsewhere, this has been supplied by running 'docker-compose up -d' in a previous step to build the images. Then the images are pushed to dockerhub which is then pulled down for the swarm.
+
+In this project, a stack is used which i have made use of to carry out rolling updates to the applicaiton. I do not want the user to face any downtime at any point while the applicaiton is updating. Disregarding replicas, having a swarm means that one machine can run an old version of the app while one is updating. Then when it updates, the new one will pick up the slack for the old version while it updates. This is made better with Nginx
 ## Ansible
 
 ## Nginx
