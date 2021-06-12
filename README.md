@@ -86,7 +86,7 @@ Docker compose is a tool that needs to be installed alongside docker. This tool 
 
 A docker swarm is an orchestration tool that allows for applications to be more robust and protected from overloading. Swarms are clusters of machines/VMs that are running shared containers (in most cases), and thus benefit from increased scalabitly and error handing as more machines leads to less points of failure. Docker swarm uses the same docker-compose file used to build the images but with one slight difference. Docker swarm cannot build images which is why it is used in the deployment stage. Swarm needs to pull the images from elsewhere, this has been supplied by running 'docker-compose up -d' in a previous step to build the images. Then the images are pushed to dockerhub which is then pulled down for the swarm.
 
-In this project, a stack is used which i have made use of to carry out rolling updates to the applicaiton. I do not want the user to face any downtime at any point while the applicaiton is updating. Disregarding replicas, having a swarm means that one machine can run an old version of the app while one is updating. Then when it updates, the new one will pick up the slack for the old version while it updates. This is made better with Nginx
+In this project, a stack is used which i have made use of to carry out rolling updates to the applicaiton. I do not want the user to face any downtime at any point while the applicaiton is updating. Disregarding replicas, having a swarm means that one machine can run an old version of the app while one is updating. Then when it updates, the new one will pick up the slack for the old version while it updates (Ingress load balancing). This is made better with Nginx
 ## Ansible
 
 ## Nginx
