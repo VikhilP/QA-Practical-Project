@@ -1,34 +1,41 @@
 version: '3.7'
 services:
     service_1:
-        image: vikhilp98/s1
+        image: ${DOCKER_USERNAME}/s1
         build: ./service-1
         ports:
             - '5000:5000'
         environment:
             DATABASE_URI: ${DATABASE_URI}
             SECRET_KEY: ${SECRET_KEY}
+            DOCKER_USERNAME: ${DOCKER_USERNAME}
         deploy:
             replicas: 3
     service_2:
-        image: vikhilp98/s2
+        image: ${DOCKER_USERNAME}/s2
         build: ./service-2
         ports:
             - '5001:5001'
+        environment:
+            DOCKER_USERNAME: ${DOCKER_USERNAME}
         deploy:
             replicas: 3
     service_3:
-        image: vikhilp98/s3
+        image: ${DOCKER_USERNAME}/s3
         build: ./service-3
         ports:
             - '5002:5002'
+        environment:
+            DOCKER_USERNAME: ${DOCKER_USERNAME}
         deploy:
             replicas: 3
     service_4:
-        image: vikhilp98/s4
+        image: ${DOCKER_USERNAME}/s4
         build: ./service-4
         ports:
             - '5003:5003'
+        environment:
+            DOCKER_USERNAME: ${DOCKER_USERNAME}
         deploy:
             replicas: 3
     
