@@ -1,13 +1,13 @@
 <html>
-<head>MLB DRAFT 20XX</head>
+<head>NFL DRAFT 20XX</head>
 <title>{{title}}</title>
-<body style="background-color:powderblue;">
+<body style="background-color:rgb(154, 189, 58);">
 {% block body_content%}
 
 <div class='form'>
     
-    <h2>You are a MLB General Manager, you are in charge of 
-        your teams next pick in the MLB Draft. 
+    <h2>You are a NFL General Manager, you are in charge of 
+        your teams next pick in the NFL Draft. 
     </h2>
     <form method = 'POST' action="">
         {{ form.hidden_tag() }}
@@ -26,8 +26,8 @@ Pick {{info["round_pick"]}}
 <table>
 {% for picks in last_picks %}
 
-<th>{{picks.position}}</th>
-<th>{{picks.pick}}</th>
+<p><th>{{picks.position}}</th>
+<th>{{picks.pick}}</th></p>
 
 {% endfor %}
 </table>
