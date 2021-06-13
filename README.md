@@ -151,8 +151,8 @@ To test this app, i ran automated testing through the jenkins app. Requests_mock
 
 ![Imgur](https://i.imgur.com/w0hUdsJ.png)
 
-![Imgur](https://i.imgur.com/QHJdjQc.png)
-"may need to edit this"
+![Test 3-4 updated](https://user-images.githubusercontent.com/82821513/121815617-4b32f900-cc6f-11eb-9a2c-ac8614aaa3f6.PNG)
+
 
 As shown above, great test coverage has been achived. This was particularly simple due to the application being very small in nature
 
@@ -160,10 +160,12 @@ As shown above, great test coverage has been achived. This was particularly simp
 
 The front end consists of 2 very simple versions of the same page. The initial empty screen, and then an updated screen once a player has been drafted.
 
-In this example, a base ball position is dislpayed next to the overall pick number e.g. SS (Short Stop) is drafted at pick number 733. A full template is only visible when a player is picked
-![Imgur](https://i.imgur.com/SJFzLDW.png)
+In this example, a base ball position is dislpayed next to the overall pick number e.g. FS (Free Safety) is drafted at pick number 162. A full template is only visible when a player is picked
 
-![Imgur](https://i.imgur.com/TjleG0D.png)
+![frontend empty](https://user-images.githubusercontent.com/82821513/121815588-28084980-cc6f-11eb-9f85-cc7a4906c69e.PNG)
+
+![FE after post](https://user-images.githubusercontent.com/82821513/121815593-2b9bd080-cc6f-11eb-8b3c-bb36e6a41766.PNG)
+
 
 # Improvements
 
