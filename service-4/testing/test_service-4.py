@@ -20,10 +20,10 @@ class TestResponse(TestBase):
     
     def test_service4_again(self):
         position = "SS"
-        pick = 30
+        pick = 32
         senditems = {"dnum": pick, "pos": position}
         info = self.client.post(url_for("calculatedraftround"), json=senditems).json
         
         
-        self.assertIn("'round_pick': 30",str(info))
+        self.assertIn("'round_pick': 32",str(info))
        
