@@ -23,14 +23,14 @@ Round {{info["draft_round"]}},
 Pick {{info["round_pick"]}} 
 ({{info["draft_number"]}} Overall)
 
-<table>
+
 {% for picks in last_picks %}
 
-<p><th>{{picks.position}}</th>
-<th>{{picks.pick}}</th></p>
+<p>A {{picks.position}} was selected
+{{picks.pick}} overall</p>
 
 {% endfor %}
-</table>
+
 {% endif %}
 
 {% endblock %}
